@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQUIDTECH - Coding Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="squid-theme">
+
+<!-- ==================== START PAGE ==================== -->
+<div id="start-page" class="page start-page">
+    <div class="hero-content">
+        <h1 class="neon-title">SQUIDTECH</h1>
+        <p class="neon-subtitle">Logical Debugging Challenge</p>
+        <p class="tagline">Debug buggy code in 30 minutes. Survive the elimination.</p>
+        <button id="start-btn" class="btn-primary glow-btn">
+            START GAME
+        </button>
+    </div>
+</div>
+
+<!-- ==================== LANGUAGE SELECTION PAGE ==================== -->
+<div id="language-page" class="page language-page hidden">
+    <div class="language-content">
+        <h2>Select Language</h2>
+        <p>Each language has unique debugging challenges</p>
+        <div class="language-buttons">
+            <button id="python-btn" class="lang-btn python-btn">
+                🐍<br>Python
+            </button>
+            <button id="c-btn" class="lang-btn c-btn">
+                ⚙️<br>C
+            </button>
+            <button id="java-btn" class="lang-btn java-btn">
+                ☕<br>Java
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== COMPETITION PAGE ==================== -->
+<div id="competition-page" class="page competition-page hidden">
+    <!-- Top Bar -->
+    <div class="competition-header">
+        <div class="header-left">
+            <div class="timer-display">
+                <span id="timer" class="timer-text">30:00</span>
+            </div>
+            <div class="language-tag" id="language-tag">Python</div>
+        </div>
+        <div class="header-center">
+            <div class="progress-pill">
+                <span id="progress-text">Question 1 / 5</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="score-display">
+                <span class="score-label">SCORE</span>
+                <span id="score" class="score-value">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div class="game-container">
+        <!-- Left: Question -->
+        <div class="question-panel">
+            <div class="panel-header">
+                <h3 id="question-title">Question</h3>
+                <span id="difficulty-badge" class="difficulty-tag medium">MEDIUM</span>
+            </div>
+            
+            <div class="panel-content">
+                <div class="problem-section">
+                    <h5>PROBLEM</h5>
+                    <p id="question-description"></p>
+                </div>
+
+                <div class="code-section">
+                    <h5>BUGGY CODE</h5>
+                    <pre id="buggy-code" class="code-display"></pre>
+                </div>
+
+                <div class="expected-section">
+                    <h5>EXPECTED OUTPUT</h5>
+                    <pre id="expected-output" class="expected-display"></pre>
+                </div>
+
+                <div class="test-input-section">
+                    <h5>TEST INPUT</h5>
+                    <pre id="test-input-display" class="test-input-display"></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Editor -->
+        <div class="editor-panel">
+            <div class="editor-header">
+                <h4>CODE EDITOR</h4>
+                <small>Fix the bug and submit</small>
+            </div>
+
+            <textarea id="user-code" class="code-input" placeholder="Paste corrected code here..."></textarea>
+
+            <div class="controls">
+                <button class="btn-run" id="run-btn">▶ RUN</button>
+                <button class="btn-submit" id="submit-btn">✓ SUBMIT</button>
+                <button class="btn-skip" id="skip-btn">→ SKIP</button>
+            </div>
+
+            <div class="output-display">
+                <div class="output-label">OUTPUT / ERROR</div>
+                <pre id="output" class="output-text"></pre>
+                <small id="output-status" class="output-status"></small>
+            </div>
+
+            <div id="result-message" class="result-feedback" style="display:none;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== RESULTS PAGE ==================== -->
+<div id="results-page" class="page results-page hidden">
+    <div class="results-container">
+        <div class="results-content">
+            <h1 id="results-title" class="results-title">CHALLENGE COMPLETE</h1>
+            
+            <div class="results-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="final-score">0</div>
+                    <div class="stat-label">SCORE</div>
+                </div>
+                <div class="stat-separator">|</div>
+                <div class="stat-item">
+                    <div class="stat-value" id="questions-solved">0</div>
+                    <div class="stat-label">SOLVED</div>
+                </div>
+                <div class="stat-separator">|</div>
+                <div class="stat-item">
+                    <div class="stat-value" id="time-spent">00:00</div>
+                    <div class="stat-label">TIME</div>
+                </div>
+                <div class="stat-separator">|</div>
+                <div class="stat-item">
+                    <div class="stat-value" id="success-rate">0%</div>
+                    <div class="stat-label">SUCCESS</div>
+                </div>
+            </div>
+
+            <p id="result-message" class="result-message"></p>
+
+            <button id="restart-btn" class="btn-primary glow-btn">
+                PLAY AGAIN
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
